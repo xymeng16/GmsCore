@@ -9,9 +9,9 @@
         android:id="@+id/settingsFragment"
         android:name="org.microg.gms.ui.SettingsFragment"
         android:label="@string/gms_settings_name">
-        <action
-            android:id="@+id/openUnifiedNlpSettings"
-            app:destination="@id/nav_unlp" />
+<!--        <action-->
+<!--            android:id="@+id/openUnifiedNlpSettings"-->
+<!--            app:destination="@id/nav_unlp" />-->
         <action
             android:id="@+id/openSelfcheck"
             app:destination="@id/selfcheckFragment" />
@@ -21,15 +21,15 @@
         <action
             android:id="@+id/openGcmSettings"
             app:destination="@id/gcmFragment" />
-        <action
-            android:id="@+id/openSafetyNetSettings"
-            app:destination="@id/safetyNetFragment" />
+<!--        <action-->
+<!--            android:id="@+id/openSafetyNetSettings"-->
+<!--            app:destination="@id/safetyNetFragment" />-->
         <action
             android:id="@+id/openMoreGoogleSettings"
             app:destination="@id/googleMoreFragment" />
-        <action
-            android:id="@+id/openExposureNotificationSettings"
-            app:destination="@id/nav_nearby" />
+<!--        <action-->
+<!--            android:id="@+id/openExposureNotificationSettings"-->
+<!--            app:destination="@id/nav_nearby" />-->
         <action
             android:id="@+id/openAbout"
             app:destination="@id/aboutFragment" />
@@ -80,19 +80,19 @@
         android:id="@+id/gcmAdvancedFragment"
         android:name="org.microg.gms.ui.PushNotificationAdvancedFragment"
         android:label="@string/service_name_mcs" />
-    <fragment
-        android:id="@+id/safetyNetFragment"
-        android:name="org.microg.gms.ui.SafetyNetFragment"
-        android:label="@string/service_name_snet"
-        tools:layout="@layout/safety_net_fragment">
-        <action
-            android:id="@+id/openSafetyNetAdvancedSettings"
-            app:destination="@id/safetyNetAdvancedFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/safetyNetAdvancedFragment"
-        android:name="org.microg.gms.ui.SafetyNetAdvancedFragment"
-        android:label="@string/service_name_snet" />
+<!--    <fragment-->
+<!--        android:id="@+id/safetyNetFragment"-->
+<!--        android:name="org.microg.gms.ui.SafetyNetFragment"-->
+<!--        android:label="@string/service_name_snet"-->
+<!--        tools:layout="@layout/safety_net_fragment">-->
+<!--        <action-->
+<!--            android:id="@+id/openSafetyNetAdvancedSettings"-->
+<!--            app:destination="@id/safetyNetAdvancedFragment" />-->
+<!--    </fragment>-->
+<!--    <fragment-->
+<!--        android:id="@+id/safetyNetAdvancedFragment"-->
+<!--        android:name="org.microg.gms.ui.SafetyNetAdvancedFragment"-->
+<!--        android:label="@string/service_name_snet" />-->
 
     <fragment
         android:id="@+id/googleMoreFragment"

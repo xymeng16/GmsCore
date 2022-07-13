@@ -14,10 +14,8 @@ import com.google.android.gms.R
 import org.microg.gms.checkin.CheckinPrefs
 import org.microg.gms.gcm.GcmDatabase
 import org.microg.gms.gcm.getGcmServiceInfo
-import org.microg.gms.safetynet.SafetyNetPreferences
 import org.microg.nlp.client.GeocodeClient
 import org.microg.nlp.client.LocationClient
-import org.microg.nlp.client.UnifiedLocationClient
 import org.microg.tools.ui.ResourceSettingsFragment
 
 class SettingsFragment : ResourceSettingsFragment() {
@@ -32,18 +30,18 @@ class SettingsFragment : ResourceSettingsFragment() {
             findNavController().navigate(requireContext(), R.id.openGcmSettings)
             true
         }
-        findPreference<Preference>(PREF_SNET)!!.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            findNavController().navigate(requireContext(), R.id.openSafetyNetSettings)
-            true
-        }
-        findPreference<Preference>(PREF_UNIFIEDNLP)!!.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            findNavController().navigate(requireContext(), R.id.openUnifiedNlpSettings)
-            true
-        }
-        findPreference<Preference>(PREF_EXPOSURE)?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            findNavController().navigate(requireContext(), NearbyPreferencesIntegration.exposureNotificationNavigationId)
-            true
-        }
+//        findPreference<Preference>(PREF_SNET)!!.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+//            findNavController().navigate(requireContext(), R.id.openSafetyNetSettings)
+//            true
+//        }
+//        findPreference<Preference>(PREF_UNIFIEDNLP)!!.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+//            findNavController().navigate(requireContext(), R.id.openUnifiedNlpSettings)
+//            true
+//        }
+//        findPreference<Preference>(PREF_EXPOSURE)?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+//            findNavController().navigate(requireContext(), NearbyPreferencesIntegration.exposureNotificationNavigationId)
+//            true
+//        }
         findPreference<Preference>(PREF_ABOUT)!!.onPreferenceClickListener = Preference.OnPreferenceClickListener {
             findNavController().navigate(requireContext(), R.id.openAbout)
             true
@@ -71,18 +69,18 @@ class SettingsFragment : ResourceSettingsFragment() {
         }
 
         findPreference<Preference>(PREF_CHECKIN)!!.setSummary(if (CheckinPrefs.isEnabled(context)) R.string.service_status_enabled_short else R.string.service_status_disabled_short)
-        findPreference<Preference>(PREF_SNET)!!.setSummary(if (SafetyNetPreferences.isEnabled(context)) R.string.service_status_enabled_short else R.string.service_status_disabled_short)
+//        findPreference<Preference>(PREF_SNET)!!.setSummary(if (SafetyNetPreferences.isEnabled(context)) R.string.service_status_enabled_short else R.string.service_status_disabled_short)
 
         val backendCount = try {
             LocationClient(context, lifecycle).getLocationBackends().size + GeocodeClient(context, lifecycle).getGeocodeBackends().size
         } catch (e: Exception) {
             0
         }
-        findPreference<Preference>(PREF_UNIFIEDNLP)!!.summary = context.resources.getQuantityString(R.plurals.pref_unifiednlp_summary, backendCount, backendCount)
+//        findPreference<Preference>(PREF_UNIFIEDNLP)!!.summary = context.resources.getQuantityString(R.plurals.pref_unifiednlp_summary, backendCount, backendCount)
 
-        findPreference<Preference>(PREF_EXPOSURE)?.isVisible = NearbyPreferencesIntegration.isAvailable
-        findPreference<Preference>(PREF_EXPOSURE)?.icon = NearbyPreferencesIntegration.getIcon(context)
-        findPreference<Preference>(PREF_EXPOSURE)?.summary = NearbyPreferencesIntegration.getExposurePreferenceSummary(context)
+//        findPreference<Preference>(PREF_EXPOSURE)?.isVisible = NearbyPreferencesIntegration.isAvailable
+//        findPreference<Preference>(PREF_EXPOSURE)?.icon = NearbyPreferencesIntegration.getIcon(context)
+//        findPreference<Preference>(PREF_EXPOSURE)?.summary = NearbyPreferencesIntegration.getExposurePreferenceSummary(context)
     }
 
     companion object {

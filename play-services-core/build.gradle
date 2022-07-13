@@ -38,17 +38,17 @@ dependencies {
     implementation project(':play-services-location-core')
     withNearbyImplementation project(':play-services-nearby-core')
     withNearbyImplementation project(':play-services-nearby-core-ui')
-    implementation project(':play-services-safetynet-core')
+//    implementation project(':play-services-safetynet-core')
     implementation project(':play-services-oss-licenses-core')
-    implementation project(':play-services-safetynet-core-ui')
-    implementation project(':play-services-tapandpay-core')
-    implementation project(':play-services-vision-core')
+//    implementation project(':play-services-safetynet-core-ui')
+//    implementation project(':play-services-tapandpay-core')
+//    implementation project(':play-services-vision-core')
 
     implementation project(':play-services-core-proto')
     implementation project(':play-services-core:microg-ui-tools') // deprecated
     implementation project(':play-services-api')
     implementation project(':play-services-cast-api')
-    implementation project(':play-services-wearable')
+//    implementation project(':play-services-wearable')
     implementation "org.microg:wearable:$wearableVersion"
 
     runtimeOnly "org.microg.nlp:geocode-v1:$nlpVersion"

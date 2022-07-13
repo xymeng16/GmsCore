@@ -1,6 +1,5 @@
 package org.microg.gms.ui;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -22,9 +21,6 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        Intent intent = getIntent();
-        NearbyPreferencesIntegration.Companion.preProcessSettingsIntent(intent);
 
         setContentView(R.layout.settings_root_activity);
 

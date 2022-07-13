@@ -12,8 +12,8 @@ dependencies {
     api project(':play-services-safetynet-api')
 
     implementation project(':play-services-base-core')
-    implementation project(':play-services-droidguard')
-    implementation project(':play-services-droidguard-core')
+//    implementation project(':play-services-droidguard')
+//    implementation project(':play-services-droidguard-core')
     implementation project(':play-services-safetynet-core-proto')
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"

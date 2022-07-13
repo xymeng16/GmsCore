@@ -21,7 +21,7 @@ import org.microg.gms.settings.SettingsContract.DroidGuard
 import org.microg.gms.settings.SettingsContract.Exposure
 import org.microg.gms.settings.SettingsContract.Gcm
 import org.microg.gms.settings.SettingsContract.Profile
-import org.microg.gms.settings.SettingsContract.SafetyNet
+//import org.microg.gms.settings.SettingsContract.SafetyNet
 import org.microg.gms.settings.SettingsContract.getAuthority
 import java.io.File
 
@@ -64,7 +64,7 @@ class SettingsProvider : ContentProvider() {
         Gcm.getContentUri(context!!) -> queryGcm(projection ?: Gcm.PROJECTION)
         Auth.getContentUri(context!!) -> queryAuth(projection ?: Auth.PROJECTION)
         Exposure.getContentUri(context!!) -> queryExposure(projection ?: Exposure.PROJECTION)
-        SafetyNet.getContentUri(context!!) -> querySafetyNet(projection ?: SafetyNet.PROJECTION)
+//        SafetyNet.getContentUri(context!!) -> querySafetyNet(projection ?: SafetyNet.PROJECTION)
         DroidGuard.getContentUri(context!!) -> queryDroidGuard(projection ?: DroidGuard.PROJECTION)
         Profile.getContentUri(context!!) -> queryProfile(projection ?: Profile.PROJECTION)
         else -> null
@@ -83,7 +83,7 @@ class SettingsProvider : ContentProvider() {
             Gcm.getContentUri(context!!) -> updateGcm(values)
             Auth.getContentUri(context!!) -> updateAuth(values)
             Exposure.getContentUri(context!!) -> updateExposure(values)
-            SafetyNet.getContentUri(context!!) -> updateSafetyNet(values)
+//            SafetyNet.getContentUri(context!!) -> updateSafetyNet(values)
             DroidGuard.getContentUri(context!!) -> updateDroidGuard(values)
             Profile.getContentUri(context!!) -> updateProfile(values)
             else -> return 0
@@ -225,24 +225,24 @@ class SettingsProvider : ContentProvider() {
         editor.apply()
     }
 
-    private fun querySafetyNet(p: Array<out String>): Cursor = MatrixCursor(p).addRow(p) { key ->
-        when (key) {
-            SafetyNet.ENABLED -> getSettingsBoolean(key, false)
-            else -> throw IllegalArgumentException("Unknown key: $key")
-        }
-    }
+//    private fun querySafetyNet(p: Array<out String>): Cursor = MatrixCursor(p).addRow(p) { key ->
+//        when (key) {
+//            SafetyNet.ENABLED -> getSettingsBoolean(key, false)
+//            else -> throw IllegalArgumentException("Unknown key: $key")
+//        }
+//    }
 
-    private fun updateSafetyNet(values: ContentValues) {
-        if (values.size() == 0) return
-        val editor = preferences.edit()
-        values.valueSet().forEach { (key, value) ->
-            when (key) {
-                SafetyNet.ENABLED -> editor.putBoolean(key, value as Boolean)
-                else -> throw IllegalArgumentException("Unknown key: $key")
-            }
-        }
-        editor.apply()
-    }
+//    private fun updateSafetyNet(values: ContentValues) {
+//        if (values.size() == 0) return
+//        val editor = preferences.edit()
+//        values.valueSet().forEach { (key, value) ->
+//            when (key) {
+//                SafetyNet.ENABLED -> editor.putBoolean(key, value as Boolean)
+//                else -> throw IllegalArgumentException("Unknown key: $key")
+//            }
+//        }
+//        editor.apply()
+//    }
 
     private fun queryDroidGuard(p: Array<out String>): Cursor = MatrixCursor(p).addRow(p) { key ->
         when (key) {
